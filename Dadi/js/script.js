@@ -8,26 +8,30 @@ Prima di partire a scrivere codice poniamoci qualche domanda:
 Che ci sia un array da qualche parte?
 Se dobbiamo confrontare qualcosa che "cosa" ci serve?
 
-step
-
-1. creare un bottone per il pc
-2. all'input del bottone 
--- generare un numero random per il pc
--- scrivere in pagina il numero del pc
-
-3. creare un bottone per il giocatore
-4. all'input del bottone
--- generare un numero random per il giocatore
--- scrivere in pagina il numero del giocatore
-
-4. comparare i numeri
-5. se giocare > pc
--- allora il giocatore ha vinto
-
-6. se giocatore < pc
--- allora il giocatore ha perso
-
-7. scrivere in pagina chi ha vinto
-
 */
 
+// step 1
+// dichiaro il numero random per giocatore
+const numeroRandom1 = Math.floor(Math.random() * 6) + 1;
+console.log('numeroRandom1', numeroRandom1, typeof numeroRandom1)
+
+// step 2
+// dichiaro il numero random per giocatore
+const numeroRandom2 = Math.floor(Math.random() * 6) + 1;
+console.log('numeroRandom2', numeroRandom2, typeof numeroRandom2)
+
+// step 3
+// stabilisco il vincitore
+// se giocatore > pc = vincitore
+
+if (numeroRandom1 > numeroRandom2) {
+    alert('Hai vinto');
+}
+// se giocatore < pc = perdente
+else if (numeroRandom1 < numeroRandom2) {
+    alert('Hai perso, ritenta');
+}
+// se numeri uguali = pari
+else {
+    alert('Pareggio');
+}
