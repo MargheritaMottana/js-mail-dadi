@@ -14,7 +14,7 @@ step
        negare l'accesso
 */
 
-
+/*
 
 // VERSIONE PROMPT
 
@@ -63,13 +63,9 @@ else {
     alert('Registrati per accedere');
 };
 
-/*
+*/
 
 // VERSIONE INPUT
-
-// creare lista utenti
-const utentiRegistrati = ['margherita@gmail.com', 'maria@gmail.com', 'raffaella@gmail.com']
-console.log('utentiRegistrati', utentiRegistrati, typeof utentiRegistrati)
 
 // Dichiarare il form
 const myForm = document.querySelector('form')
@@ -84,30 +80,68 @@ myForm.addEventListener('submit', function (event) {
     const mailInput = document.getElementById('mailInput')
 
     // prendo e dichiaro il valore dell'input
-    const mail = mailInput.value;
-    console.log('mail', mail, typeof mail);
+    const mailUtente = mailInput.value;
+    console.log('mailUtente', mailUtente, typeof mailUtente);
 
-    /*
+    // VERSIONE con CICLO FOR
+    // riutilizzo codice scritto per versione PROMPT
 
-    // VERSIONE INCLUDES()
+    const utenti = [
+        'margherita@gmail.com',
+        'maria@gmail.com',
+        'raffaella@gmail.com'
+    ];
+    console.log('utenti', utenti, typeof utenti)
+    console.log('utenti.length', utenti.length, typeof utenti.length)
 
-    // Se il contenuto dell'input è presente tra le mail registrate
-    if (utentiRegistrati.includes(mail)) {
+    let found = false;
 
-        // fai accedere all'account
-        alert('BentornatƏ ' + mail)
-        console.log('BentornatƏ ' + mail)
+    for (let i = 0; i < utenti.length; i++) {
+        console.log('utenti[i]', utenti[i], typeof utenti[i]);
+
+        if (utenti[i] == mailUtente) {
+            console.log('BentornatƏ ' + mailUtente);
+            found = true;
+        }
+    };
+    console.log(found);
+
+    if (found) {
+        document.getElementById('result').innerHTML = 'BentornatƏ ' + mailUtente
     }
-
-    // altrimenti
     else {
-
-        // chiedi all'utente di registrarsi
-        alert('Per poter accedere devi creare un account')
-        console.log('Per poter accedere devi creare un account')
+        alert('Registrati per accedere');
     };
 
+    /*
+    
+        // VERSIONE INPUT con INCLUDES()
+    
+        // dichiaro gli utenti
+        const utenti = [
+            'margherita@gmail.com',
+            'maria@gmail.com',
+            'raffaella@gmail.com'
+        ];
+        console.log('utenti', utenti, typeof utenti)
+        console.log('utenti.length', utenti.length, typeof utenti.length)
+    
+        // Se il contenuto dell'input è presente tra le mail registrate
+        if (utenti.includes(mailUtente)) {
+    
+            // fai accedere all'account
+            alert('BentornatƏ ' + mailUtente)
+            console.log('BentornatƏ ' + mailUtente)
+        }
+    
+        // altrimenti
+        else {
+    
+            // chiedi all'utente di registrarsi
+            alert('Per poter accedere devi creare un account')
+            console.log('Per poter accedere devi creare un account')
+        };
+    
+    */
 
 });
-
-*/
